@@ -1,0 +1,15 @@
+{
+  "name": "purescript-behavior-tetris",
+  "version": "1.0.0",
+  "description": "purescript-behavior-tetris",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pulp --watch browserify --to output/index.js"
+  },
+  "author": "SNR-AC-APSG",
+  "license": "MIT"
+}
