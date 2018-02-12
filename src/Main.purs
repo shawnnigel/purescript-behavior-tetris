@@ -41,7 +41,7 @@ scene { w, h } = pure background <> map renderTetrisGrid  gridArray where
   scaleFactor :: Number
   scaleFactor = max w h / 16.0
   
-  size = 0.5
+  size = 1.0
 
   renderTetrisBlock :: forall a. Rectangle -> Drawing
   renderTetrisBlock {x, y, h, w} =  scale scaleFactor scaleFactor <<< translate 0.0 0.0 <<< scale size size $ 

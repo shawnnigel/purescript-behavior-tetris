@@ -22,6 +22,10 @@
       var canvas = document.getElementById('canvas');
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      window.onresize = function() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      };
     </script>
     <script type="text/javascript" src="index.js"></script>
   </body>
