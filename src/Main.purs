@@ -3,11 +3,8 @@ module Main where
 import Prelude
 
 import Color (Color, black)
-
 import Color.Scheme.MaterialDesign (deepPurple)
-
-import Color.Scheme.X11 (teal)
-
+import Color.Scheme.X11 (grey, teal)
 import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Console (CONSOLE, log)
 import Data.Array (replicate, sortBy, (..))
@@ -52,19 +49,19 @@ scene { w, h } = pure background <> map renderTetrisGrid  gridArray where
   renderTetrisGrid =  foldMap renderTetrisBlock
 
 gridOutline :: OutlineStyle
-gridOutline = outlineColor black <>  lineWidth 0.2  
+gridOutline = outlineColor black <>  lineWidth 0.05  
 
 altColor :: Number -> Number -> Color
-altColor x y =  if (x % 2.0 == 0.0 && y % 2.0 == 0.0 ) then deepPurple else teal
+altColor x y =  if (x % 2.0 == 0.0 && y % 2.0 == 0.0 ) then grey else grey
 
 gridArray :: Behavior (Array Rectangle)
 gridArray = singleGrid <$> Mouse.position where
              singleGrid x = do
-                xx <- 1 .. 50
-                yy <- 1 .. 50 
+                xx <- 1 .. 25
+                yy <- 1 .. 25 
                 let xxx = toNumber xx
                     yyy = toNumber yy
-                pure {x: xxx , y: yyy , h: 1.0, w: 1.0}
+                pure {x: xxx , y: yyy , h: 2.0, w: 2.0}
 
 main :: forall eff. Eff (canvas :: CANVAS, frp :: FRP | eff) Unit
 main = do
