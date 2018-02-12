@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pulp --watch browserify --to output/index.js"
+    "start": "pulp --watch browserify --to build/index.js"
   },
   "author": "SNR-AC-APSG",
   "license": "MIT"
